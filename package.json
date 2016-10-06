@@ -1,0 +1,36 @@
+{
+  "name": "drawly",
+  "version": "1.0.0",
+  "description": "a collaborative drawing board",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack -p | webpack-dev-server --hot",
+    "build": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kenny Li",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "firebase": "^3.2.1",
+    "lodash": "^4.14.1",
+    "moment": "^2.14.1",
+    "paper": "^0.10.2",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-router": "^2.6.1",
+    "reactfire": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
