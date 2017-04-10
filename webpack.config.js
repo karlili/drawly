@@ -8,7 +8,7 @@ var config = {
     entry: APP_DIR + '/index.js',
     output: {
         path: BUILD_DIR,
-        filename: 'index.bundle.js'
+        filename: 'scripts/index.bundle.js'
     },
     devServer: {
         hot: true,

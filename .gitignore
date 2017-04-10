@@ -1,5 +1,5 @@
 .idea/
 .vscode/
 node_modules/
-public/index.bundle.js
+public/scripts/index.bundle.js
 npm-debug.log
