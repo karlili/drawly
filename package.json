@@ -4,7 +4,7 @@
   "description": "a collaborative drawing board",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -p | webpack-dev-server --hot",
+    "dev": "webpack-dev-server --hot",
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
