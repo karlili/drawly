@@ -5,10 +5,13 @@ var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
-    entry: APP_DIR + '/index.js',
+    entry: {
+        drawly: APP_DIR + '/draw/index.js',
+        snake: APP_DIR + '/snake/index.js'
+    },
     output: {
         path: BUILD_DIR,
-        filename: 'scripts/index.bundle.js'
+        filename: "scripts/[name].index.bundle.js"
     },
     devServer: {
         hot: true,
@@ -27,7 +30,6 @@ var config = {
             }
         ]
     }
-
 };
 
 module.exports = config;
