@@ -1,5 +1,6 @@
 .idea/
 .vscode/
 node_modules/
-public/scripts/index.bundle.js
+public/scripts/drawly.index.bundle.js
+public/scripts/snake.index.bundle.js
 npm-debug.log
