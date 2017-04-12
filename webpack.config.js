@@ -6,8 +6,8 @@ var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
     entry: {
-        drawly: APP_DIR + '/draw/index.js',
-        snake: APP_DIR + '/snake/index.js'
+        drawly: path.join(APP_DIR, '/draw/index.js'),
+        snake: path.join(APP_DIR, '/snake/index.js')
     },
     output: {
         path: BUILD_DIR,
