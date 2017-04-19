@@ -8,7 +8,6 @@ function onKeyDown(event) {
 }
 
 
-
 var canvas = document.getElementById("canvas");
 Paper.install(window);
 Paper.setup(canvas);

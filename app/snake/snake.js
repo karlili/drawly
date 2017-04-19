@@ -97,8 +97,6 @@ class Snake {
 
         console.log("New Snake", this.segments);
 
-
-
     }
 
     moveLeft() {
@@ -119,18 +117,6 @@ class Snake {
 
         console.log("New Snake", this.segments);
 
-        // for (var i = 0; i < this.segments.length; i++) {
-        //     var s = this.segments[i];
-        //     s.removePath();
-        //     s.updatePosition(s.getPosX() - this.PIXEL_MOVEMENT, s.getPosY());
-        //     var path = s.getPath();
-        //     if (i === 0) {
-        //         path.fillColor = 'red'
-        //     } else {
-        //         path.fillColor = 'black'
-        //     }
-        //
-        // }
     }
 
     moveDown() {
