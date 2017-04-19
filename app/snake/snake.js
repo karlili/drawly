@@ -65,6 +65,32 @@ class Snake {
 
     }
 
+    /**
+     * Collision Detection checks if the Snake Head hits it's body
+     * or TODO: when we have the obstacles, the detection has to check if the head hits the obstacles
+     *
+     */
+    collisionDetection() {
+        //Check if the first segment overlaps with the other segment pieces
+        var headSegment = this.segments[0];
+        for (var i = 1; i < this.segments.length; i++) {
+            var s = this.segments[i];
+
+            //TopX -> TopX + this.SNAKE_BODY_SIZE
+            //TopY -> TopY + this.SNAKE_BODY_SIZE
+
+            if (s.getPosX() <= headSegment.getPosX() && headSegment.getPosX() <= (s.getPosX() + this.SNAKE_BODY_SIZE)) {
+                console.log("Collision Detection : Snake Overlap with Segment", i, "on X");
+                return true;
+            }
+
+            if (s.getPosY() <= headSegment.getPosY() && headSegment.getPosY() <= (s.getPosY() + this.SNAKE_BODY_SIZE)) {
+                console.log("Collision Detection : Snake Overlap with Segment", i, "on Y");
+                return true;
+            }
+        }
+    }
+
 
     /**
      * Moving meaning to advance the head to the desired location,
@@ -75,7 +101,6 @@ class Snake {
      *
      * This will be the general logic to cope with the movement of the segment
      */
-
 
     moveRight() {
         console.log("Move Right");
@@ -163,6 +188,7 @@ class Snake {
 
         console.log("New Snake", this.segments);
     }
+
 
 }
 
