@@ -28,7 +28,16 @@ function initializeEnvironment(bodyLength, startingX, startingY) {
             s.renderSnake()
         }
         else if (event.key === 'a') {
-            s.moveLeft()
+            s.moveLeft();
+            s.renderSnake()
+        }
+        else if (event.key === 'w') {
+            s.moveUp();
+            s.renderSnake()
+        }
+        else if (event.key === 's') {
+            s.moveDown();
+            s.renderSnake()
         }
     })
 }

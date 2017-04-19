@@ -40,6 +40,7 @@ class Segment {
     }
 
     removePath() {
+        // console.log("Path ID (",this.path.id,") Path Parent (",this.path.parent,")");
         this.path.parent.removeChildren();
     }
 

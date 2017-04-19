@@ -82,10 +82,8 @@ class Snake {
         //get the current position of X and Y, increment X by 5 pixel
         console.log("Current Segment Length(", this.segments.length, ")");
 
-
         var origHead = this.segments[0];
         origHead.updateHead(false);
-
 
         //Add a Head Segment with the new movement
         var newHead = new Segment(origHead.getPosX() + this.SNAKE_BODY_SIZE + this.PIXEL_BETWEEN_SNAKE_BODY, origHead.getPosY(), true);
@@ -93,26 +91,34 @@ class Snake {
 
         //Remove the Tail Segment
         var origTail = this.segments[this.segments.length - 1];
-        // var origTailPath = origTail.getPath();
-        // console.log("Path ID (",origTailPath.id,") Path Parent (",origTailPath.parent,")");
-        // origTailPath.parent.removeChildren()
         this.removeSegment(this.segments.length - 1);
         this.segments.pop(origTail);
 
 
         console.log("New Snake", this.segments);
 
-        // for (var i = 0; i < this.segments.length; i++) {
-        //     var s = this.segments[i];
-        //     // s.removePath();
-        //     s.updatePosition(s.getPosX() + this.PIXEL_MOVEMENT, s.getPosY());
-        // }
 
 
     }
 
     moveLeft() {
         console.log("Move Left");
+
+        console.log("Current Segment Length(", this.segments.length, ")");
+
+        var origHead = this.segments[0];
+        origHead.updateHead(false);
+
+        var newHead = new Segment(origHead.getPosX() - this.SNAKE_BODY_SIZE - this.PIXEL_BETWEEN_SNAKE_BODY, origHead.getPosY(), true);
+        this.segments.unshift(newHead);
+
+        //Remove the Tail Segment
+        var origTail = this.segments[this.segments.length - 1];
+        this.removeSegment(this.segments.length - 1);
+        this.segments.pop(origTail);
+
+        console.log("New Snake", this.segments);
+
         // for (var i = 0; i < this.segments.length; i++) {
         //     var s = this.segments[i];
         //     s.removePath();
@@ -127,12 +133,49 @@ class Snake {
         // }
     }
 
-    moveUp() {
-        console.log("Move Up")
+    moveDown() {
+        console.log("Move Down");
+
+        //get the current position of X and Y, increment X by 5 pixel
+        console.log("Current Segment Length(", this.segments.length, ")");
+
+        var origHead = this.segments[0];
+        origHead.updateHead(false);
+
+        //Add a Head Segment with the new movement
+        var newHead = new Segment(origHead.getPosX(), origHead.getPosY() + this.SNAKE_BODY_SIZE + this.PIXEL_BETWEEN_SNAKE_BODY, true);
+        this.segments.unshift(newHead);
+
+        //Remove the Tail Segment
+        var origTail = this.segments[this.segments.length - 1];
+        this.removeSegment(this.segments.length - 1);
+        this.segments.pop(origTail);
+
+
+        console.log("New Snake", this.segments);
+
     }
 
-    moveDown() {
-        console.log("Move Down")
+    moveUp() {
+        console.log("Move Up");
+
+        //get the current position of X and Y, increment X by 5 pixel
+        console.log("Current Segment Length(", this.segments.length, ")");
+
+        var origHead = this.segments[0];
+        origHead.updateHead(false);
+
+        //Add a Head Segment with the new movement
+        var newHead = new Segment(origHead.getPosX(), origHead.getPosY() - this.SNAKE_BODY_SIZE - this.PIXEL_BETWEEN_SNAKE_BODY, true);
+        this.segments.unshift(newHead);
+
+        //Remove the Tail Segment
+        var origTail = this.segments[this.segments.length - 1];
+        this.removeSegment(this.segments.length - 1);
+        this.segments.pop(origTail);
+
+
+        console.log("New Snake", this.segments);
     }
 
 }
