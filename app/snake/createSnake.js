@@ -1,19 +1,36 @@
 console.log("Loading Snake");
 
 const Paper = require("paper");
-
 const Snake = require("./snake");
+
+function onKeyDown(event) {
+    console.log(event.key);
+}
+
+
 
 var canvas = document.getElementById("canvas");
 Paper.install(window);
 Paper.setup(canvas);
 
 
-function createSnake(bodyLength, startingX, startingY) {
+function initializeEnvironment(bodyLength, startingX, startingY) {
     var s = new Snake("Shhh", bodyLength);
     s.initializeSnake(startingX, startingY);
-    s.renderSnake()
+    s.renderSnake();
 
+
+    window.addEventListener("keydown", function (event) {
+        console.log(event.key, " - ", event.keyCode);
+
+        if (event.key === 'd') {
+            s.moveRight();
+            s.renderSnake()
+        }
+        else if (event.key === 'a') {
+            s.moveLeft()
+        }
+    })
 }
 
 
@@ -22,6 +39,6 @@ function generateBlocks() {
 }
 
 module.exports = {
-    createSnake: createSnake,
+    initializeEnvironment: initializeEnvironment,
     generateBlocks: generateBlocks
 };

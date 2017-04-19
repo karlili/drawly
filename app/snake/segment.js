@@ -1,16 +1,30 @@
+
 class Segment {
 
-    constructor(posX, posY) {
+    constructor(posX, posY, isHead, isObsolete) {
         this.posX = posX;
         this.posY = posY;
+        this.isHead = isHead;
+    }
+
+    headCheck() {
+        return this.isHead;
+    }
+
+    updateHead(isHead) {
+        this.isHead = isHead
+    }
+
+    updateObsolete(isObsolete) {
+        this.isObsolete = isObsolete;
     }
 
     getPosX() {
-        return this.posX
+        return this.posX;
     }
 
     getPosY() {
-        return this.posY
+        return this.posY;
     }
 
     getSegment() {
@@ -26,8 +40,9 @@ class Segment {
     }
 
     removePath() {
-        this.path.remove();
+        this.path.parent.removeChildren();
     }
+
 }
 
 module.exports = Segment;

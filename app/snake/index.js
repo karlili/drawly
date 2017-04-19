@@ -1,2 +1,4 @@
 const s = require('./createSnake');
-s.createSnake(10, 10, 10);
+const keyboardListener = require('./interfactions/keyboardListener');
+s.initializeEnvironment(10, 300, 10);
+
