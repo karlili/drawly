@@ -76,18 +76,18 @@ class Snake {
         for (var i = 1; i < this.segments.length; i++) {
             var s = this.segments[i];
 
-            //TopX -> TopX + this.SNAKE_BODY_SIZE
-            //TopY -> TopY + this.SNAKE_BODY_SIZE
+            //TopX <= head <= TopX + this.SNAKE_BODY_SIZE
+            //TopY <= head <= TopY + this.SNAKE_BODY_SIZE
 
-            if (s.getPosX() <= headSegment.getPosX() && headSegment.getPosX() <= (s.getPosX() + this.SNAKE_BODY_SIZE)) {
-                console.log("Collision Detection : Snake Overlap with Segment", i, "on X");
+            if (s.getPosX() <= headSegment.getPosX() &&
+                headSegment.getPosX() <= (s.getPosX() + this.SNAKE_BODY_SIZE) &&
+                s.getPosY() <= headSegment.getPosY() &&
+                headSegment.getPosY() <= (s.getPosY() + this.SNAKE_BODY_SIZE)
+            ) {
+                console.log("Collision Detection : Snake Overlap with Segment", i);
                 return true;
             }
 
-            if (s.getPosY() <= headSegment.getPosY() && headSegment.getPosY() <= (s.getPosY() + this.SNAKE_BODY_SIZE)) {
-                console.log("Collision Detection : Snake Overlap with Segment", i, "on Y");
-                return true;
-            }
         }
     }
 
