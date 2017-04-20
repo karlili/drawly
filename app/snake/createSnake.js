@@ -1,7 +1,7 @@
 console.log("Loading Snake");
 
 const Paper = require("paper");
-const Snake = require("./snake");
+const Snake = require("./core/snake");
 const screencheck = require("./dimension/screenCheck");
 const keylistener = require("./interfactions/keyboardListener");
 
