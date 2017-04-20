@@ -2,6 +2,8 @@ console.log("Loading Snake");
 
 const Paper = require("paper");
 const Snake = require("./snake");
+const screencheck = require("./dimension/screenCheck");
+const keylistener = require("./interfactions/keyboardListener");
 
 var canvas = document.getElementById("canvas");
 Paper.install(window);
@@ -13,32 +15,8 @@ function initializeEnvironment(bodyLength, startingX, startingY) {
     s.initializeSnake(startingX, startingY);
     s.renderSnake();
 
-
-    window.addEventListener("keydown", function (event) {
-        console.log(event.key, " - ", event.keyCode);
-
-        if (event.key === 'd') {
-            s.moveRight();
-            s.collisionDetection();
-            s.renderSnake()
-        }
-        else if (event.key === 'a') {
-            s.moveLeft();
-            s.collisionDetection();
-            s.renderSnake()
-        }
-        else if (event.key === 'w') {
-            s.moveUp();
-            s.collisionDetection();
-            s.renderSnake()
-        }
-        else if (event.key === 's') {
-            s.moveDown();
-            s.collisionDetection();
-            s.renderSnake()
-        }
-
-    })
+    screencheck.initializeWindowResizeListener();
+    keylistener.initializeKeyEventListener(s)
 }
 
 

@@ -62,7 +62,6 @@ class Snake {
      */
     removeSegment(index) {
         this.segments[index].removePath();
-
     }
 
     /**
