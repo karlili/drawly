@@ -9,10 +9,13 @@ var canvas = document.getElementById("canvas");
 Paper.install(window);
 Paper.setup(canvas);
 
+const viewSize = view.size;
 
-function initializeEnvironment(bodyLength, startingX, startingY) {
+
+function initializeEnvironment(bodyLength) {
     var s = new Snake("Shhh", bodyLength);
-    s.initializeSnake(startingX, startingY);
+    var startingPoint = view.center;
+    s.initializeSnake(startingPoint.x, startingPoint.y);
     s.renderSnake();
 
     screencheck.initializeWindowResizeListener();
